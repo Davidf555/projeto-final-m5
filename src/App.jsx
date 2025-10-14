@@ -3,17 +3,16 @@ import Ongs from "./components/Ongs/Ongs.jsx";
 import Casos from "./components/CasosEnergia/Casos.jsx";
 import Banner from "./components/Banner/Banner.jsx";
 import Menu from "./components/Menu/Menu.jsx";
-import "./App.css"; 
+import "./App.css";
 
 export default function App() {
   return (
     <div>
-      <Menu/>
-      <Banner/>
-      <h2>Casos de energia renovavel</h2>
+      <Menu />
+      <Banner />
+      <h2 className="energyTitle">Casos de Energia Renovável</h2>
       <Casos />
-      
-      <h2>ONGs de Energia Renovável</h2>
+     <h2 className="ongsTitle">ONGs de Energia Renovável</h2>
       <Ongs />
     </div>
   );

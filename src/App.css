@@ -15,6 +15,65 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.energyTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--corPrimaria);
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Linha decorativa abaixo do título */
+.energyTitle::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--corSecundaria), var(--corDestaque));
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.ongsTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--corPrimaria);
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* leve profundidade */
+}
+
+/* Linha decorativa abaixo do título com outra variação de gradiente */
+.ongsTitle::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--corDestaque), var(--corSecundaria));
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .ongsTitle {
+    font-size: 1.8rem;
+  }
+
+  .ongsTitle::after {
+    width: 50px;
+    height: 3px;
+  }
+}
+
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
