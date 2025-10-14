@@ -1,38 +1,49 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Ongs.module.css";
 
-function Ongs() {
-  const [ongs, setOngs] = useState([]);
+export default function Ongs() {
+    const [ongs, setOngs] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // colocar a API COM A rota
-    fetch("")
-      .then((response) => response.json())
-      .then((data) => setClimates(data))
-      .catch((error) => console.error("Erro ao buscar dados:", error));
-  }, []);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch("https://projeto-final-m4-3knm.onrender.com/ongs/listar-ongs");
+                const data = await response.json();
+                setOngs(data);
+            } catch (error) {
+                console.error("Erro ao buscar os dados:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
 
-  return (
-    <main className={styles.main}>
-      <h1>Dados sobre o clima Mundial</h1>
-      <div className={styles.container}>
-      {climates.length > 0 ? (
-        climates.map((item) => (
-          <div key={item.id} className={styles.card}>
-            <h2 className={styles.title}>{item.nome}</h2>
-            {/* mudar as chaves da API */}
-            <p className={styles.description}>{item.descricao}</p>
-            <p className={styles.year}>Ano: {item.ano}</p>
-            <p className={styles.impact}>Impacto: {item.impacto}</p>
-          </div>
-        ))
-      ) : (
-        <p className={styles.loading}>Carregando dados climáticos...</p>
-      )}
-    </div>
-    </main>
-    
-  );
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className={styles.loadingContainer}>
+                <div className={styles.spinner}></div>
+                <p className={styles.loadingText}>Carregando...</p>
+            </div>
+        );
+    }
+
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.grid}>
+                {ongs.map((ong) => (
+                    <div key={ong.id} className={styles.card}>
+                        <h2 className={styles.highlight}>{ong.nome}</h2>
+                        <p>{ong.descricao}</p>
+                        <a href={ong.site} target="_blank" rel="noreferrer">
+                            {ong.site}
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
-
-export default Ongs;
