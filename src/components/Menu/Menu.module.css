@@ -1,6 +1,6 @@
 :root {
   --corPrimaria: #094067;
-  --corTexto: #fffffe;
+  --cor-Texto: #fffffe;
   --corHover: #3da9fc;
 }
 
@@ -9,10 +9,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--corPrimaria);
-  color: var(--corTexto);
+  color: var(--cor-Texto);
   padding: 1rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  position: sticky;
   top: 0;
   z-index: 10;
 }
@@ -43,7 +42,7 @@
 }
 
 .nav a {
-  color: var(--corTexto);
+  color: var(--cor-Texto);
   text-decoration: none;
   font-weight: 500;
   position: relative;
