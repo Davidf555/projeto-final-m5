@@ -9,12 +9,11 @@ import "./App.css";
 export default function App() {
   return (
     <div>
-      <Menu/>
-      <Banner/>
-      <h2>Casos de energia renovavel</h2>
+      <Menu />
+      <Banner />
+      <h2 className="energyTitle">Casos de Energia Renovável</h2>
       <Casos />
-      
-      <h2>ONGs de Energia Renovável</h2>
+     <h2 className="ongsTitle">ONGs de Energia Renovável</h2>
       <Ongs />
       <Footer/>
     </div>
