@@ -1,0 +1,109 @@
+:root {
+  --azul-escuro-overlay: rgba(9, 64, 103, 0.85);
+  --azul-glass-claro: rgba(61, 169, 252, 0.2);
+  --borda-clara: rgba(255, 255, 255, 0.3);
+  --texto-claro: white;
+}
+
+.footer {
+  background-image: url("./fundo.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 5rem;
+  width: 100%; 
+}
+
+.overlay {
+  background: var(--azul-escuro-overlay);
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--texto-claro);
+}
+
+.footerContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerContent li {
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link:hover {
+  color: var(--texto-claro);
+  text-decoration: underline;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.socialLink {
+  background: var(--azul-glass-claro);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--borda-clara);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h3{
+    color: var(--texto-claro);
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .linksSection, .contactSection {
+    margin-bottom: 2rem;
+    width: 100%; 
+    text-align: center;
+  }
+}
